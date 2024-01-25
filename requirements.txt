@@ -9,4 +9,3 @@ Werkzeug
 MarkupSafe
 tensorflow
 keras
-PIL
