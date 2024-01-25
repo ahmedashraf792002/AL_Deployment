@@ -1,6 +1,6 @@
 from __future__ import division, print_function
 # coding=utf-8
-
+from PIL import  Image
 import os
 import numpy as np
 
@@ -29,7 +29,8 @@ print('Model loaded. Check http://127.0.0.1:5001/')
 def model_predict(img_path, model):
 
     # Preprocessing the image
-    img = image.load_img(img_path, target_size=(176,176))
+    img = Image.open(img_path)
+    img = img.resize((176, 176))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
